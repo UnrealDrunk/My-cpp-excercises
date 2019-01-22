@@ -10,7 +10,7 @@ int main()
 	// 1 - стенки лабиринта
 	// 0 - путь
 	int Lab_Construct[Arr_field][Arr_field] =
-	{ 
+	{
 		{1,1,1,1,1,1,1,1,1,1,},
 		{1,1,0,0,0,0,0,0,0,1,},
 		{0,0,0,1,1,1,1,0,1,1,},
@@ -20,11 +20,11 @@ int main()
 		{1,0,1,1,0,1,1,1,1,1,},
 		{1,0,0,0,0,0,0,0,1,1,},
 		{1,0,1,1,0,1,1,0,0,0,},
-		{1,1,1,1,1,1,1,1,1,1,} 
+		{1,1,1,1,1,1,1,1,1,1,}
 	};
-	int Door_s1 = 8;
-	int Door_s2 = 9;
-	Lab_Construct[Door_s1][Door_s2] = 2;
+	int Dot_s1 = 2;
+	int Dot_s2 = 0;
+	Lab_Construct[Dot_s1][Dot_s2] = 2;
 
 	do
 	{
@@ -34,7 +34,6 @@ int main()
 			{
 				if (Lab_Construct[i][j] == 1)
 				{
-					
 					std::cout << '\xDB'; // static_cast<char>(219);
 					std::cout << '\xDB'; // static_cast<char>(219);
 				}
@@ -55,10 +54,4 @@ int main()
 	} while (true);
 
 	std::getchar();
-
-
-
-
-
-
 }
