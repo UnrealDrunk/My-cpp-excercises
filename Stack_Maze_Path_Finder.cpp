@@ -24,14 +24,14 @@ public:
 };
 
 // лабиринт строки, колонки
-const int n = 4, m = 5;
+const int N = 4, M = 5;
 
 // координаты цели
 int fx, fy;
-bool visited[n][m];
+bool visited[N][M];
 
 
-bool isReachable(int maze[n][m])
+bool isReachable(int maze[N][M])
 {
 	// начинаем с верхнего левого угла (0, 0). 
 	int i = 0, j = 0;
@@ -61,6 +61,7 @@ bool isReachable(int maze[n][m])
 		// то возвращаем true 
 		if (i == fx and j == fy) {
 			return true;
+			
 		}
 
 		// Проверка направления вверх 
@@ -85,7 +86,7 @@ bool isReachable(int maze[n][m])
 
 		// Проверка направления вниз
 		else if (d == 2) {
-			if (i + 1 < n and maze[i + 1][j] and
+			if (i + 1 < N and maze[i + 1][j] and
 				visited[i + 1][j]) {
 				node temp1(i + 1, j);
 				visited[i + 1][j] = false;
@@ -94,7 +95,7 @@ bool isReachable(int maze[n][m])
 		}
 		// Проверка направления вправо
 		else if (d == 3) {
-			if (j + 1 < m and maze[i][j + 1] and
+			if (j + 1 < M and maze[i][j + 1] and
 				visited[i][j + 1]) {
 				node temp1(i, j + 1);
 				visited[i][j + 1] = false;
@@ -125,7 +126,7 @@ int main()
 	memset(visited, true, sizeof(visited));
 
 	// Лабиринтик
-	int maze[n][m] = {
+	int maze[N][M] = {
 		{ 1, 0, 1, 1, 0 },
 		{ 1, 1, 1, 0, 1 },
 		{ 0, 1, 0, 1, 1 },
@@ -133,14 +134,14 @@ int main()
 	};
 
 	// Координаты цели
-	fx = 2;
-	fy = 3;
+	fx = 3;
+	fy = 4;
 
 	if (isReachable(maze)) {
 		cout << "Path Found!" << '\n';
 	}
 	else
-		cout << "No Path Found!" << '\n';
+		cout << "there's no path!" << '\n';
 	
 
 	system("pause");
